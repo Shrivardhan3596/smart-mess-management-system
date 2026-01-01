@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import OwnerLogin from "./OwnerLogin";
+import CustomerLogin from "./CustomerLogin";
+import Home from "./Home";
+import CustomerView from "./CustomerView";
 
 function App() {
+  const [page, setPage] = useState("login");
+  const [customerData, setCustomerData] = useState(null);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {page === "login" && (
+        <div className="login-container">
+          <OwnerLogin setPage={setPage} />
+          <CustomerLogin setPage={setPage} setCustomerData={setCustomerData} />
+        </div>
+      )}
+
+      {page === "owner" && <Home setLoggedIn={() => setPage("login")} />}
+
+      {page === "customer" && (
+        <CustomerView
+          customer={customerData}
+          logout={() => setPage("login")}
+        />
+      )}
+    </>
   );
 }
 
