@@ -28,8 +28,7 @@ function CustomerLogin({ setPage, setCustomerData }) {
   };
 
   return (
-    <div className="login-card">
-      <h2>🍽️ Shri Mess</h2>
+    <div className="card">
       <h3>Customer Login</h3>
 
       <input
