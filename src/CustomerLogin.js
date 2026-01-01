@@ -30,13 +30,13 @@ function CustomerLogin({ setPage, setCustomerData }) {
       <h3>👤 Customer Login</h3>
 
       <input
-        placeholder="Customer Name"
+        placeholder="Customer Name eg: raj"
         onChange={(e) => setName(e.target.value)}
       />
 
       <input
         type="password"
-        placeholder="Password (name123)"
+        placeholder="Password (name123) eg: raj123"
         onChange={(e) => setPassword(e.target.value)}
       />
 
