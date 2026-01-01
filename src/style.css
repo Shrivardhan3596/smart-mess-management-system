@@ -2,111 +2,97 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #f2f2f2;
+  background: #eef2f3;
 }
 
 /* ---------- LOGIN PAGE ---------- */
 .login-container {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
   gap: 20px;
-  padding: 60px 20px;
+  padding: 80px 20px;
+  flex-wrap: wrap;   /* IMPORTANT: helps on small screens */
 }
 
-/* LOGIN CARDS (OWNER + CUSTOMER) */
 .login-card {
   background: white;
   padding: 25px;
-  width: 300px;
-  min-height: 360px;
+  width: 280px;
+  min-height: 320px;
   border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.login-card h2,
-.login-card h3 {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
   text-align: center;
-  margin-bottom: 10px;
 }
 
-/* ---------- INPUTS & BUTTONS ---------- */
-input {
+.login-card input {
   width: 100%;
   padding: 8px;
-  margin: 8px 0;
+  margin: 6px 0;
   box-sizing: border-box;
-}
-
-button {
-  width: 100%;
-  padding: 8px;
-  margin-top: 10px;
-  cursor: pointer;
 }
 
 /* ---------- HOME PAGE ---------- */
 .home-container {
-  max-width: 1100px;
+  max-width: 900px;
   margin: auto;
-  padding: 15px;
+  padding: 20px;
 }
 
 /* HEADER */
 .header {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;
+  gap: 10px;
+  flex-wrap: wrap;  /* mobile friendly */
 }
 
-/* HOME PAGE CARD (DESKTOP PATTERN UNCHANGED) */
-.home-container .card {
+/* CARD */
+.card {
   background: white;
-  padding: 15px;
-  margin-top: 15px;
-  border-radius: 8px;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 10px;
 }
 
 /* CUSTOMER LIST */
 .customer-item {
-  border-bottom: 1px solid #ddd;
-  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+  padding: 8px 0;
+  cursor: pointer;
 }
 
 .customer-details {
-  background: #f9f9f9;
+  background: #f5f5f5;
   padding: 10px;
-  border-radius: 6px;
+  border-radius: 8px;
+  margin-top: 8px;
 }
 
-/* DELETE BUTTON */
+/* BUTTONS */
+button {
+  margin: 4px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
 .danger {
-  background: rgb(243, 107, 107);
+  background: red;
   color: white;
   border: none;
 }
 
-/* ---------- MOBILE VIEW ONLY ---------- */
+/* ---------- MOBILE & TABLET ---------- */
 @media (max-width: 768px) {
 
   /* LOGIN PAGE STACK */
   .login-container {
-    flex-direction: column;
-    align-items: center;
+    padding-top: 40px;
   }
 
   .login-card {
     width: 100%;
-    max-width: 350px;
-  }
-
-  /* OWNER HOME PAGE MOBILE TEMPLATE */
-  .home-container .card {
-    width: 100%;
+    max-width: 320px;
   }
 
   /* HEADER STACK */
@@ -122,5 +108,12 @@ button {
 
   h2 {
     text-align: center;
+  }
+}
+
+/* ---------- LARGE SCREENS ---------- */
+@media (min-width: 1200px) {
+  .home-container {
+    max-width: 1100px;
   }
 }
