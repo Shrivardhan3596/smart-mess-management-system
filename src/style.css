@@ -1,8 +1,10 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #eef2f3;
+  background: linear-gradient(135deg, #eef2f3, #d9e4f5);
 }
+
+/* ================= LOGIN ================= */
 
 .login-container {
   display: flex;
@@ -12,19 +14,34 @@ body {
 }
 
 .login-card {
-  background: white;
+  background: linear-gradient(145deg, #ffffff, #f0f6ff);
   padding: 25px;
   width: 280px;
-  border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(52, 152, 219, 0.25);
   text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.login-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(52, 152, 219, 0.35);
 }
 
 .login-card input {
   width: 100%;
-  padding: 8px;
-  margin: 6px 0;
+  padding: 9px;
+  margin: 8px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
 }
+
+.login-card input:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+/* ================= HOME ================= */
 
 .home-container {
   max-width: 900px;
@@ -38,30 +55,99 @@ body {
   align-items: center;
 }
 
+/* ================= CARD ================= */
+
 .card {
-  background: white;
+  background: linear-gradient(135deg, #ffffff, #f9fbff);
   margin-top: 20px;
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 12px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.1);
 }
 
+/* ================= CUSTOMER ================= */
+
 .customer-item {
-  border-bottom: 1px solid #ccc;
-  padding: 8px 0;
+  border-bottom: 1px solid #d6e0f0;
+  padding: 10px 0;
   cursor: pointer;
+  transition: background 0.2s, padding-left 0.2s;
+}
+
+.customer-item:hover {
+  background: #eef5ff;
+  padding-left: 8px;
 }
 
 .customer-details {
-  background: #f5f5f5;
-  padding: 10px;
+  background: linear-gradient(135deg, #f5f9ff, #eaf0ff);
+  padding: 12px;
   border-radius: 8px;
+  border-left: 4px solid #3498db;
 }
+
+/* ================= BUTTONS ================= */
 
 button {
   margin: 4px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #3498db, #5dade2);
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
 }
 
+button:hover {
+  background: linear-gradient(135deg, #2e86c1, #3498db);
+  transform: scale(1.05);
+}
+
+/* ================= DANGER ================= */
+
 .danger {
-  background: red;
+  background: linear-gradient(135deg, #e74c3c, #ff6b6b);
   color: white;
 }
+
+/* ================= MOBILE RESPONSIVE ONLY ================= */
+
+@media (max-width: 600px) {
+
+  /* Login cards go downside-downside */
+  .login-container {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px;
+  }
+
+  /* Full width cards on mobile */
+  .login-card {
+    width: 90%;
+  }
+
+  /* Header stack vertically */
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  /* Home container padding adjust */
+  .home-container {
+    padding: 12px;
+  }
+
+  /* Buttons easier to tap */
+  button {
+    width: 100%;
+    margin: 6px 0;
+  }
+
+  /* Customer items spacing */
+  .customer-item {
+    padding: 12px 0;
+  }
+}
+
