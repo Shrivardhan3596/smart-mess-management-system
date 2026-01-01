@@ -86,7 +86,7 @@ button {
 
 /* DELETE BUTTON */
 .danger {
-  background: rgb(255, 0, 0);
+  background: rgb(243, 107, 107);
   color: white;
   border: none;
 }
