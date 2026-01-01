@@ -4,12 +4,11 @@ function CustomerLogin({ setPage, setCustomerData }) {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
 
-  const login = () => {
+  const loginCustomer = () => {
     const customers = JSON.parse(localStorage.getItem("customers")) || [];
 
-    // Match only FIRST NAME
     const customer = customers.find(
-      (c) => c.name.split(" ")[0].toLowerCase() === name.toLowerCase()
+      (c) => c.name.toLowerCase() === name.toLowerCase()
     );
 
     if (!customer) {
@@ -17,7 +16,6 @@ function CustomerLogin({ setPage, setCustomerData }) {
       return;
     }
 
-    // Password = firstname + 123
     if (password !== name.toLowerCase() + "123") {
       alert("Invalid password");
       return;
@@ -28,24 +26,21 @@ function CustomerLogin({ setPage, setCustomerData }) {
   };
 
   return (
-    <div className="card">
-      <h3>Customer Login</h3>
+    <div className="login-card">
+      <h3>👤 Customer Login</h3>
 
       <input
-        type="text"
-        placeholder="First Name (e.g. Raj)"
-        value={name}
+        placeholder="Customer Name"
         onChange={(e) => setName(e.target.value)}
       />
 
       <input
         type="password"
-        placeholder="Password (raj123)"
-        value={password}
+        placeholder="Password (name123)"
         onChange={(e) => setPassword(e.target.value)}
       />
 
-      <button onClick={login}>Login</button>
+      <button onClick={loginCustomer}>Login</button>
     </div>
   );
 }
