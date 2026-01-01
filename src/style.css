@@ -14,12 +14,12 @@ body {
   padding: 60px 20px;
 }
 
-/* LOGIN CARDS – SAME SIZE */
+/* LOGIN CARDS (OWNER + CUSTOMER) */
 .login-card {
   background: white;
   padding: 25px;
   width: 300px;
-  min-height: 360px;          /* SAME HEIGHT */
+  min-height: 360px;
   border-radius: 10px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   display: flex;
@@ -33,35 +33,7 @@ body {
   margin-bottom: 10px;
 }
 
-/* ---------- LOGIN PAGE ---------- */
-.login-container {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 20px;
-  padding: 60px 20px;
-}
-
-/* LOGIN CARDS – SAME SIZE */
-.card {
-  background: white;
-  padding: 10px;
-  width: 300px;
-  min-height: 300px;          /* SAME HEIGHT */
-  border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.card h2,
-.card h3 {
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-/* INPUTS */
+/* ---------- INPUTS & BUTTONS ---------- */
 input {
   width: 100%;
   padding: 8px;
@@ -69,7 +41,6 @@ input {
   box-sizing: border-box;
 }
 
-/* BUTTON */
 button {
   width: 100%;
   padding: 8px;
@@ -92,8 +63,8 @@ button {
   flex-wrap: wrap;
 }
 
-/* CARD */
-.card {
+/* HOME PAGE CARD (DESKTOP PATTERN UNCHANGED) */
+.home-container .card {
   background: white;
   padding: 15px;
   margin-top: 15px;
@@ -119,28 +90,32 @@ button {
   border: none;
 }
 
-/* ---------- MOBILE VIEW ---------- */
+/* ---------- MOBILE VIEW ONLY ---------- */
 @media (max-width: 768px) {
+
+  /* LOGIN PAGE STACK */
   .login-container {
-    flex-direction: column;   /* OWNER ON TOP, CUSTOMER BELOW */
+    flex-direction: column;
     align-items: center;
   }
 
   .login-card {
     width: 100%;
     max-width: 350px;
-    min-height: 360px;        /* KEEP SAME HEIGHT */
   }
 
+  /* OWNER HOME PAGE MOBILE TEMPLATE */
+  .home-container .card {
+    width: 100%;
+  }
+
+  /* HEADER STACK */
   .header {
     flex-direction: column;
     align-items: stretch;
   }
 
-  .header input {
-    width: 100%;
-  }
-
+  .header input,
   .header button {
     width: 100%;
   }
