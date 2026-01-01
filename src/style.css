@@ -33,6 +33,34 @@ body {
   margin-bottom: 10px;
 }
 
+/* ---------- LOGIN PAGE ---------- */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 60px 20px;
+}
+
+/* LOGIN CARDS – SAME SIZE */
+.card {
+  background: white;
+  padding: 10px;
+  width: 300px;
+  min-height: 300px;          /* SAME HEIGHT */
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card h2,
+.card h3 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
 /* INPUTS */
 input {
   width: 100%;
