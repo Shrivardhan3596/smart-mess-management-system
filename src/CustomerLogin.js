@@ -28,7 +28,8 @@ function CustomerLogin({ setPage, setCustomerData }) {
   };
 
   return (
-    <div className="card">
+    <div className="login-card">
+      <h2>🍽️ Shri Mess</h2>
       <h3>Customer Login</h3>
 
       <input
@@ -40,7 +41,7 @@ function CustomerLogin({ setPage, setCustomerData }) {
 
       <input
         type="password"
-        placeholder="Password (firstname123)"
+        placeholder="Password (raj123)"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
